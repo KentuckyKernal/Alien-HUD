@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style>
+
+body {
+    font-family: "Roboto", Arial, sans-serif;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 50px;
+    color: #FFF;
+    text-shadow: -1px -1px #333;
+    background: #161824;
+}
+
+#myBar {
+  width: 10%;
+  height: 36px;
+  background-color: #4CAF50;
+}
+
+#label {
+  text-align: center;
+  line-height: 36px;
+  color: white;
+
+}
+.container{
+	position:relative;
+}
+.ContainerBox{
+	height:1px;
+	width:1px;
+	top:100px;
+	position:relative;
+	opacity:0;
+	border:2px solid #42eb42;
+	box-shadow: 0 0 35px 2px #42eb42;
+	border-color:#42eb42;
+	
+
+}
+
+
+.test{
+position:absolute;
+right:80px;
+top:450px;
+}
+
+
+
+.helix img { 
+   border:3px solid #42eb42;
+   opacity:0.5;
+   position:absolute;
+   right:80px;
+}
+.xenomorph img { 
+   border:3px solid #42eb42;
+   opacity:0.5;
+   position:absolute;
+   right:80px;
+}
+
+.text{
+	border:3px solid #47F1FF;
+	opacity:0.5;
+	padding-left:-15px;
+	padding-right:-15px;
+}
+.predator{
+	opacity:0.9;
+	position:absolute;
+	top:45px;
+	left:100px;
+
+}
+.line1{
+	width:600px;
+	height:2px;
+	opacity:0.9;
+	position:absolute;
+	right:0px;
+	top:0px;
+	border: 0.5px solid  #42eb42;
+	
+	box-shadow: 0 0 50px 2px #42eb42,
+				0 0 60px 2px #fd0,
+		  inset 0 0 10px 2px #42eb42,
+		  inset 0 0 20px 2px #42eb42;
+	border-color:#42eb42;
+	
+}
+.line2{
+	height:700px;
+	width:2px;
+	opacity:0.9;
+	position:absolute;
+	left:0px;
+	top:0px;
+	border: 0.5px solid #fd0;
+	
+	box-shadow: 0 0 50px 2px #42eb42,
+				0 0 60px 2px #fd0,
+		  inset 0 0 10px 2px #42eb42,
+		  inset 0 0 20px 2px #42eb42;
+	border-color:#42eb42;
+	
+}
+
+.circle {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: 1px solid;
+	position:relative;
+	top:10px;
+	left:35px;
+	
+	box-shadow: 0 0 50px 2px #42eb42,
+				0 0 60px 2px #42eb42,
+		  inset 0 0 10px 2px #42eb42,
+		  inset 0 0 20px 2px #42eb42;
+	border-color:#47F1FF;
+}
+.circle:hover {
+	background-color: white;
+}
+.circle2 {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: 1px solid;
+	position:relative;
+	top:10px;
+	left:115px;
+	
+	box-shadow: 0 0 50px 2px #42eb42,
+				0 0 60px 2px #42eb42,
+		  inset 0 0 10px 2px #42eb42,
+		  inset 0 0 20px 2px #42eb42;
+	border-color:#47F1FF;
+	
+}
+.circle3 {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: 1px solid ;
+	position:relative;
+	top:130px;
+	left:55px;
+	
+	box-shadow: 0 0 50px 2px #42eb42,
+				0 0 60px 2px #42eb42,
+		  inset 0 0 10px 2px #42eb42,
+		  inset 0 0 20px 2px #42eb42;
+	border-color:#47F1FF;
+}
+.circle4 {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: 1px solid;
+	position:relative;
+	top:160px;
+	left:170px;
+	
+	box-shadow: 0 0 50px 2px #42eb42,
+				0 0 60px 2px #42eb42,
+		  inset 0 0 10px 2px #42eb42,
+		  inset 0 0 20px 2px #42eb42;
+	border-color:#47F1FF;
+}
+.circle5 {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: 1px solid;
+	position:relative;
+	top:440px;
+	left:-130px;
+	
+	box-shadow: 0 0 50px 2px #42eb42,
+				0 0 60px 2px #42eb42,
+		  inset 0 0 10px 2px #42eb42,
+		  inset 0 0 20px 2px #42eb42;
+	border-color:#47F1FF;
+}
+.circle5:hover {
+	background-color: white;
+}
+
+
+.circle6 {
+    width: 2px;
+    height: 2px;
+    border: 1px solid;
+	position:relative;
+	top:0px;
+	left:0px;
+	}
+	
+button{
+	background-color:#161824;
+	box-shadow:0 0 10px 2px #42eb42;
+	position:relative;
+	top:400px;
+}
+
+.idInterface{
+	font-family:"Courier New", Courier, monospace;
+	font-size:28px;
+	color:#47F1FF;
+	position:relative;
+	margin-bottom:-50px;
+	z-index:-1;
+	opacity:1;
+	width:400px;
+	text-transform: uppercase;
+}
+
+.processing{
+border: 1px solid #42eb42;
+width:502px;
+position:absolute;
+top:250px;
+left:80px;
+z-index:-1;
+opacity:0.5;
+
+}
+.processing1{
+border: 1px solid #42eb42;
+width:502px;
+position:absolute;
+top:265px;
+left:90px;
+z-index:-1;
+opacity:0.9;
+}
+
+
+.heartbeat{
+border: 1px solid #8c0000;
+width:402px;
+position:absolute;
+top:680px;
+left:80px;
+z-index:-1;
+opacity:1;
+
+}
+
+
+
+.heatRate{
+border: 1px solid #8c0000;
+position:absolute;
+width:100;
+height:102px;
+top:680px;
+left:480px;
+z-index:-1;
+opacity:1;
+
+}
+
+
+
+.status{
+border: 1px solid #8c0000;
+position:absolute;
+width:502px;
+height:30px;
+top:780px;
+left:80px;
+z-index:-1;
+opacity:1;
+background-color:black;
+
+}
+.text-glow.green{
+color: #42eb42;
+text-shadow:0 0 1px #42eb42,
+			0 0 0px #42eb42,
+			0 0 0px #42eb42,
+			0 0 10px #42eb42, 
+			0 0 20px #42eb42;
+
+
+}
+.type-outlined{
+font-family:DINfunProOutline,sans-serif;
+}
+.mega{font-size:6.25rem;line-height:6.875rem}
+
+.scanning{
+position:absolute;
+left:80px;
+top:150px;
+}
+.proccesingText{
+position:absolute;
+left:80px;
+top:150px;
+}
+.complete{
+position:absolute;
+left:80px;
+top:150px;
+}
+
+
+.column1 {
+    float: left;
+    width: 30%;
+    padding: 5px;
+}
+.column2 {
+    float: left;
+    width: 40%;
+    padding: 5px;
+
+}
+.column3 {
+    float: left;
+    width: 30%;
+    padding: 5px;
+}
+
+.intlineone{
+position:relative;
+left:2000px;
+	width:400px;
+	height:2px;
+	border: 1px solid #42eb42;
+}
+
+.intlinetwo{
+position:relative;
+left:2000px;
+	width:400px;
+	height:2px;
+	border: 1px solid #42eb42;
+}
+
+.status{
+color: #D9512B;
+font-size:20px;
+padding-bottom:2px;
+
+
+}
+
+</style>
+</head>
+<body>
+
+<div id="container">
+<div class="helix">
+		<img src="https://vignette.wikia.nocookie.net/avp/images/c/cd/Laser01.PNG/revision/latest/scale-to-width-down/250?cb=20120618195551" width="400px" height="auto">
+		
+</div>
+
+
+<div class="xenomorph">
+<img src="https://media.giphy.com/media/G2xgQd544uo0g/giphy.gif" width="400px" height="auto">
+</div>
+
+
+	<center>
+	
+	<div class="column1" >
+	  
+	  
+	  
+		
+
+		
+		<div class="scanning">
+		<h1><span class="type-outlined mega text-glow green" itemprop="name">ANALYZING...</span></h1>
+		</div>
+		<div class="proccesingText">
+		<h1><span class="type-outlined mega text-glow green" itemprop="name">ASSIMILATING...</span></h1>
+		</div>
+		<div class="complete">
+		<h1><span class=" type-outlined mega text-glow green" itemprop="name">LIVE</span></h1>
+		</div>
+		
+		<div class="processing">
+			<img src="https://pa1.narvii.com/6327/4ce45495103591a2502777b883cfde755c7d2859_hq.gif" width="500px">
+		</div>
+		<div class="processing1">
+			<img src="https://pa1.narvii.com/6327/4ce45495103591a2502777b883cfde755c7d2859_hq.gif" width="500px">
+		</div>
+		
+		<div class='heartbeat'>
+			<img src="https://i.imgur.com/4ikdVGk.gif" width='100%'>
+		</div>
+		
+		<div class="heatRate">
+			<img src="https://media0.giphy.com/media/Jv7ln84bdL1NC/200w.gif" width="100px" height="100%">
+		</div>
+		
+		<div class='status'>
+			<p>Subject status: Stable<span>   </span> Heart Rate:40BPM</p>
+		</div>
+	
+	</div>
+	
+	<div class="column2" >
+	<button class="welcome"><style='font-size:18px'>Enter</button>
+	<div class="intlineone"></div>
+	<p id="lifeform"></p>
+	
+		<div class="intlinetwo"></div>
+			<div class="ContainerBox">
+
+			<br>
+			<br>
+			<div class="predator">
+				<img src="https://vignette.wikia.nocookie.net/avp/images/4/4c/902117-product-silo.png/revision/latest?cb=20131214182446" height="600px" width="auto">
+			</div>
+			<div id="dd"></div>
+			
+			
+			<div class="line1"></div>
+			<div class="line2"></div>
+			<div class="information"><p id='info'></p></div>
+			<div class="circle"></div>
+			<div class="circle2"></div>
+			<div class="circle3"></div>
+			<div class="circle4"></div>
+			<div class="circle5"></div>
+			
+			</div>
+			
+			
+
+			</center>
+
+			
+			
+			
+
+			<div id="dd"></div>
+			
+	</div>
+	
+	
+	<div class="column3" >
+	<div class="void"></div>
+	</div>
+	
+</div>
+
+
+
+
+<script>
+$.when($.ready).then(function(){
+var txt = 'Subject 0897: Predator';
+
+$(".helix").hide();
+$(".text").hide();
+$(".predator").hide();
+$(".line1").hide();
+$(".line2").hide();
+$(".circle").hide();
+$(".circle2").hide();
+$(".circle3").hide();
+$(".circle4").hide();
+$(".circle5").hide();
+$(".xenomorph").hide();
+$(".heartbeat").hide();
+$(".heatRate").hide();
+$(".idInterface").hide();
+$(".processing").hide();
+$(".processing1").hide();
+$(".scanning").hide();
+$(".proccesingText").hide();
+$(".complete").hide();
+$(".status").hide();
+$(".contBackground").hide();
+$(".void").hide();
+
+
+//event triggered by the user
+$("button").click(function(){
+	$(".welcome").fadeOut('fast');
+	$(".intlineone").delay(2000).animate({left: '-=2000'},'slow');
+	$(".intlinetwo").animate({left: '-=2000'},'slow');
+	$(".intlinetwo").animate({top: '+=50'},'slow');
+$(".void").delay(3000).fadeIn('very slow',function(){
+	//Dynamic HTML
+	for (let i=0; i<txt.length; i++) {
+
+			setTimeout( function timer()
+			{
+			// var text is equivilant to $("#id/.class")
+			// DOM = document -> Element -> id/class
+			var text = document.getElementById("lifeform");
+			text.style.color = '#fd0';
+			text.style.fontSize = "28px";
+			text.style.textShadow = "0 0 1px #42eb42";
+			text.innerHTML += txt.charAt(i);
+			text.style.marginBottom = "-40px";
+			text.style.marginTop = "10px";
+			
+			}, i*150 );
+		};
+	$("#lifeform").delay(3500).fadeOut(250).fadeIn(250);
+	
+	
+	
+	
+
+	$(".idInterface").delay(3000).fadeIn('very slow');
+	$(".ContainerBox").delay(4000).fadeIn('fast');
+	$(".ContainerBox").animate({opacity: '0.6'},'slow');
+    $(".ContainerBox").animate({width: '600px'},'slow');
+	$(".ContainerBox").animate({height: '700px'}, 'slow',function(){
+		//Dynamic HTML
+		for (let i=0; i<168; i++) {
+
+			setTimeout( function timer()
+			{
+			var div = document.createElement('grid'+[i]);
+			div.innerHTML = "<div style='position: relative; color:white; top: 30%; '><b>+</b></div>";
+			//set style
+			div.style.position = 'relative';
+			div.style.top = '-40px';
+			div.style.width = '8.3%';
+			div.style.height = '50px';
+			div.style.float = 'left';
+			div.style.opacity = '0.3';
+			div.style.border = '1px solid white';
+			//.style.background ='#42eb42';
+			// better to use CSS though - just set class
+			div.setAttribute('class', 'myclass'); // and make sure myclass has some styles in css
+			document.getElementById('dd').appendChild(div);
+			}, i*10 );
+			
+			
+			
+		};
+		
+		//$( ".ContainerBox" ).delay(8000).css( "background-color", "rgba(66, 235, 66, 0.2)" );
+		$(".predator").delay(3000).fadeIn('slow');
+		
+		$(".line1").delay(4500).fadeIn('slow',function(){
+		    $( ".ContainerBox" ).css( "background-color", "rgba(66, 235, 66, 0.2)" );
+			$(".scanning").fadeIn('slow');
+			$(".line1").animate({top: '+=700'},'slow');
+			$(".line1").animate({top: '-=700'},'slow');
+			$(".line1").animate({top: '+=700'},'slow');
+			$(".line1").animate({top: '-=700'},'slow');
+			$(".line1").fadeOut('slow', function(){
+			//Use a callback functions to ensure above operation has finished completely
+				$(".line2").fadeIn('slow');
+				$(".line2").animate({left: '+=600'}, 'slow');
+				$(".line2").animate({left: '-=600'}, 'slow');
+				$(".line2").animate({left: '+=600'}, 'slow');
+				$(".line2").animate({left: '-=600'}, 'slow');
+				$(".line2").fadeOut(function(){
+					$(".scanning").fadeOut("slow");
+					$(".proccesingText").delay(500).fadeIn('very slow');
+					$(".processing").delay(1000).fadeIn('slow');
+					$(".processing1").delay(1500).fadeIn('slow');
+					$(".proccesingText").delay(2000).fadeOut('very slow');
+					$(".complete").delay(3000).fadeIn(function(){
+						$(".circle").fadeIn(1000);
+						$(".circle2").delay(2000).fadeIn('slow');
+						$(".circle3").delay(2500).fadeIn('slow');
+						$(".circle4").delay(3000).fadeIn('slow');
+						$(".circle5").delay(3500).fadeIn('slow');
+						$(".heartbeat").delay(4000).fadeIn('slow');
+						$(".heatRate").delay(4000).fadeIn('slow');
+						$(".status").delay(4000).fadeIn('slow');
+				
+				});
+			});
+		});
+	});
+	});
+	});
+	//activated when circles appear
+	$(".circle").hover(function()
+	{
+		$(".helix").fadeIn(50).fadeOut(50).fadeIn(50).fadeOut(50).fadeIn('fast', function(){
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		});
+		
+	},
+	function()
+	{
+		$(".helix").fadeOut('fast')
+	});
+	
+		
+	$(".circle5").hover(function(){
+		$(".xenomorph").fadeIn('fast');
+	},function(){$(".xenomorph").fadeOut('fast')});
+	
+	
+	
+	
+	
+	
+}); 
+}); 
+</script>
+
+</body>
+</html>
