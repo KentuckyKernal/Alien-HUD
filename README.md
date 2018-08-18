@@ -1,2 +1,2 @@
-# Alien-HUD
-HTML/CSS/JS/jQuery
+# Browser HUD
+
