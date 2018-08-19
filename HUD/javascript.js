@@ -30,11 +30,7 @@ class InfoEx {
 			};
 
 	}
-	//remove element
-	RemoveTitle () {
-		let printline = document.getElementById('title');
-		printline.removeChild(hoverTitle);
-	}
+
 	PrintContent(){
 	
 		let printline = document.createElement("hoverContent");
@@ -56,12 +52,14 @@ class InfoEx {
 				};
 	}
 	
-	RemoveContent(){
-		let printline = document.getElementById('content');
-		printline.removeChild(hoverContent);
+//remove all appended elements
+	RemoveElements(){
+		let rTitle = document.getElementById('title');
+		rTitle.removeChild(hoverTitle);
+		let rContent = document.getElementById('content');
+		rContent.removeChild(hoverContent);
 	}
-	
-		
+
 }//end class
 
 const circle1 = new InfoEx('Bio-Mask', "The Bio-Mask is one of the main tools used by the Yautja. As well as performing the basic function of protecting a Predator's head, the mask also grants the wearer access to multiple vision modes including zoom capabilities, facilitates Vocal Mimicry, and includes breathing apparatus, diagnostics, and visual and audio recording systems. The mask often also incorporates a red targeting laser used in conjunction with a Plasmacaster.");
@@ -69,7 +67,7 @@ const circle1 = new InfoEx('Bio-Mask', "The Bio-Mask is one of the main tools us
 const circle5 = new InfoEx('A Deadly Relationship',"The Yautja are a sentient, humanoid race that breathe an atmosphere similar to that of Earth's, but possess a level of technological advancement far in excess of anything available to humans. The Predators stalk and kill their prey using a combination of highly advanced technology, such as active camouflage and energy weapons, combined with traditional ancient weapons, such as blades, spears and nets. The Predators often ritualistically mutilate their prey and usually claim a trophy from their kills. Capable of interstellar travel in star ships, the Predators have hunted on Earth for centuries and have also had prior contact with the Engineers. They have been known to deliberately breed Xenomorphs in order to hunt them, often as part of initiation rituals for young Predators.")
 
 
-
+//jQuery is separated from class above to avoid concole error
 $.when($.ready).then(function(){
 
 $(".helix").hide();
@@ -207,8 +205,7 @@ $("button").click( () => //function()
 		circle1.PrintContent();
 	},function() {
 		$(".helix").fadeOut('fast');
-		circle1.RemoveTitle();
-		circle1.RemoveContent();
+		circle1.RemoveElements();
 	});
 	//..	
 	$(".circle5").hover(function(){
@@ -217,14 +214,7 @@ $("button").click( () => //function()
 		circle5.PrintContent();
 	},function(){
 		$(".xenomorph").fadeOut('fast');
-		circle5.RemoveTitle();
-		circle5.RemoveContent();
+		circle5.RemoveElements();
 	});
-	
-	
-	
-	
-	
-	
 }); 
 }); 
