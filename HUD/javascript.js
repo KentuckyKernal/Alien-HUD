@@ -4,10 +4,19 @@ const txt = 'Subject 0897: Predator';
 
 //object template serves target circles
 class InfoEx {
-  constructor(title, content) {
+  constructor(title, content,img) {
     this.title = title;
     this.content = content;
+	this.img = img;
   }
+  PrintImg(){
+	  let printline = document.createElement("objectImg");
+	  printline.setAttribute('id', 'objectImg');
+	  printline.innerHTML = "<img src=" + this.img + " width='400px' height='auto' >";
+	  document.getElementById('newtoo').appendChild(printline);
+	  
+  }
+  
   //append element 
   PrintTitle (){
   
@@ -58,13 +67,15 @@ class InfoEx {
 		rTitle.removeChild(hoverTitle);
 		let rContent = document.getElementById('content');
 		rContent.removeChild(hoverContent);
+		let rImg = document.getElementById('newtoo');
+		rImg.removeChild(objectImg);
 	}
 
 }//end class
 
-const circle1 = new InfoEx('Bio-Mask', "The Bio-Mask is one of the main tools used by the Yautja. As well as performing the basic function of protecting a Predator's head, the mask also grants the wearer access to multiple vision modes including zoom capabilities, facilitates Vocal Mimicry, and includes breathing apparatus, diagnostics, and visual and audio recording systems. The mask often also incorporates a red targeting laser used in conjunction with a Plasmacaster.");
+const circle1 = new InfoEx('Bio-Mask', "The Bio-Mask is one of the main tools used by the Yautja. As well as performing the basic function of protecting a Predator's head, the mask also grants the wearer access to multiple vision modes including zoom capabilities, facilitates Vocal Mimicry, and includes breathing apparatus, diagnostics, and visual and audio recording systems. The mask often also incorporates a red targeting laser used in conjunction with a Plasmacaster.",'https://vignette.wikia.nocookie.net/avp/images/c/cd/Laser01.PNG/revision/latest/scale-to-width-down/250?cb=20120618195551');
 //..
-const circle5 = new InfoEx('A Deadly Relationship',"The Yautja are a sentient, humanoid race that breathe an atmosphere similar to that of Earth's, but possess a level of technological advancement far in excess of anything available to humans. The Predators stalk and kill their prey using a combination of highly advanced technology, such as active camouflage and energy weapons, combined with traditional ancient weapons, such as blades, spears and nets. The Predators often ritualistically mutilate their prey and usually claim a trophy from their kills. Capable of interstellar travel in star ships, the Predators have hunted on Earth for centuries and have also had prior contact with the Engineers. They have been known to deliberately breed Xenomorphs in order to hunt them, often as part of initiation rituals for young Predators.")
+const circle5 = new InfoEx('A Deadly Relationship',"The Yautja are a sentient, humanoid race that breathe an atmosphere similar to that of Earth's, but possess a level of technological advancement far in excess of anything available to humans. The Predators stalk and kill their prey using a combination of highly advanced technology, such as active camouflage and energy weapons, combined with traditional ancient weapons, such as blades, spears and nets. The Predators often ritualistically mutilate their prey and usually claim a trophy from their kills. Capable of interstellar travel in star ships, the Predators have hunted on Earth for centuries and have also had prior contact with the Engineers. They have been known to deliberately breed Xenomorphs in order to hunt them, often as part of initiation rituals for young Predators.",'https://media.giphy.com/media/G2xgQd544uo0g/giphy.gif');
 
 
 //jQuery is separated from class above to avoid concole error
@@ -201,6 +212,8 @@ $("button").click( () => //function()
 	//jQuery collection here??
 	$(".circle").hover(function() {
 		$(".helix").fadeIn(50).fadeOut(50).fadeIn(50).fadeOut(50).fadeIn('fast');
+		$("#newtoo").fadeIn(50).fadeOut(50).fadeIn(50).fadeOut(50).fadeIn('fast');
+		circle1.PrintImg();
 		circle1.PrintTitle();
 		circle1.PrintContent();
 	},function() {
@@ -210,6 +223,7 @@ $("button").click( () => //function()
 	//..	
 	$(".circle5").hover(function(){
 		$(".xenomorph").fadeIn(50).fadeOut(50).fadeIn(50).fadeOut(50).fadeIn('fast');
+		circle5.PrintImg();
 		circle5.PrintTitle();
 		circle5.PrintContent();
 	},function(){
