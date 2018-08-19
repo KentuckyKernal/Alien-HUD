@@ -1,4 +1,4 @@
-
+"use strict";
 //Intro text
 const txt = 'Subject 0897: Predator';
 
@@ -13,7 +13,7 @@ class InfoEx {
 	  let printline = document.createElement("objectImg");
 	  printline.setAttribute('id', 'objectImg');
 	  printline.innerHTML = "<img src=" + this.img + " width='400px' height='auto' >";
-	  document.getElementById('newtoo').appendChild(printline);
+	  document.getElementById('imgSpace').appendChild(printline);
 	  
   }
   
@@ -67,7 +67,7 @@ class InfoEx {
 		rTitle.removeChild(hoverTitle);
 		let rContent = document.getElementById('content');
 		rContent.removeChild(hoverContent);
-		let rImg = document.getElementById('newtoo');
+		let rImg = document.getElementById('imgSpace');
 		rImg.removeChild(objectImg);
 	}
 
@@ -81,8 +81,7 @@ const circle5 = new InfoEx('A Deadly Relationship',"The Yautja are a sentient, h
 //jQuery is separated from class above to avoid concole error
 $.when($.ready).then(function(){
 
-$(".helix").hide();
-$(".text").hide();
+
 $(".predator").hide();
 $(".line1").hide();
 $(".line2").hide(); 
@@ -91,7 +90,6 @@ $(".circle2").hide();
 $(".circle3").hide();
 $(".circle4").hide();
 $(".circle5").hide();
-$(".xenomorph").hide();
 $(".heartbeat").hide();
 $(".heatRate").hide();
 $(".idInterface").hide();
@@ -101,7 +99,6 @@ $(".scanning").hide();
 $(".proccesingText").hide();
 $(".complete").hide();
 $(".status").hide();
-$(".contBackground").hide();
 $(".void").hide();
 
 
@@ -211,23 +208,22 @@ $("button").click( () => //function()
 	//activated when circles appear
 	//jQuery collection here??
 	$(".circle").hover(function() {
-		$(".helix").fadeIn(50).fadeOut(50).fadeIn(50).fadeOut(50).fadeIn('fast');
-		$("#newtoo").fadeIn(50).fadeOut(50).fadeIn(50).fadeOut(50).fadeIn('fast');
+		$("#imgSpace").fadeIn(50).fadeOut(50).fadeIn(50).fadeOut(50).fadeIn('fast');
 		circle1.PrintImg();
 		circle1.PrintTitle();
 		circle1.PrintContent();
 	},function() {
-		$(".helix").fadeOut('fast');
+		$("#imgSpace").fadeOut('fast');
 		circle1.RemoveElements();
 	});
 	//..	
 	$(".circle5").hover(function(){
-		$(".xenomorph").fadeIn(50).fadeOut(50).fadeIn(50).fadeOut(50).fadeIn('fast');
+		$("#imgSpace").fadeIn(50).fadeOut(50).fadeIn(50).fadeOut(50).fadeIn('fast');
 		circle5.PrintImg();
 		circle5.PrintTitle();
 		circle5.PrintContent();
 	},function(){
-		$(".xenomorph").fadeOut('fast');
+		$(".imgSpace").fadeOut('fast');
 		circle5.RemoveElements();
 	});
 }); 
