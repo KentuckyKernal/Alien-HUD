@@ -3,16 +3,19 @@
 const txt = 'Subject 0897: Predator';
 
 //object template serves target circles
+//object chosen as there are 5 circles each requiring 
+//the same structure
+
 class InfoEx {
   constructor(title, content,img) {
-    this.title = title;
-    this.content = content;
-	this.img = img;
+    this.Title = title;
+    this.Content = content;
+	this.Img = img;
   }
   PrintImg(){
 	  let printline = document.createElement("objectImg");
 	  printline.setAttribute('id', 'objectImg');
-	  printline.innerHTML = "<img src=" + this.img + " width='400px' height='auto' >";
+	  printline.innerHTML = "<img src=" + this.Img + " width='400px' height='auto' >";
 	  document.getElementById('imgSpace').appendChild(printline);
 	  
   }
@@ -26,14 +29,14 @@ class InfoEx {
 	  
 		//Intro text => string => sequential list of characters
 		
-		for (let i=0; i < this.title.length; i++) {
+		for (let i=0; i < this.Title.length; i++) {
 
 				setTimeout( () => 
 				{
 					printline.style.color = '#42eb42';
 					printline.style.fontSize = "22px";
 					printline.style.textShadow = "0 0 1px #42eb42";
-					printline.innerHTML += this.title.charAt(i);
+					printline.innerHTML += this.Title.charAt(i);
 					
 				}, i*40 );
 			};
@@ -48,14 +51,14 @@ class InfoEx {
 		  
 			//Intro text => string => sequential list of characters
 			
-			for (let i=0; i < this.content.length; i++) {
+			for (let i=0; i < this.Content.length; i++) {
 
 					setTimeout( () => 
 					{
 						printline.style.color = '#42eb42';
 						printline.style.fontSize = "18px";
 						printline.style.textShadow = "0 0 1px #42eb42";
-						printline.innerHTML += this.content.charAt(i);
+						printline.innerHTML += this.Content.charAt(i);
 						
 					}, i*40 );
 				};
@@ -79,7 +82,7 @@ const circle5 = new InfoEx('A Deadly Relationship',"The Yautja are a sentient, h
 
 
 //jQuery is separated from class above to avoid concole error
-$.when($.ready).then(function(){
+$(document).ready(function(){
 
 
 $(".predator").hide();
@@ -140,7 +143,7 @@ $("button").click( () => //function()
 	$(".ContainerBox").animate({opacity: '0.6'},'slow');
     $(".ContainerBox").animate({width: '600px'},'slow');
 	$(".ContainerBox").animate({height: '700px'}, 'slow', () => {
-		//Dynamic HTML
+		//Dynamic HTML 
 		for (let i=0; i<168; i++) {
 
 			setTimeout( () => //function timer()
